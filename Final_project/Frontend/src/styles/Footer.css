@@ -1,0 +1,113 @@
+
+.bachira {
+    position: relative;
+    letter-spacing: 0.5px;
+    line-height: 2.5rem;
+}
+
+.logo {
+
+    width: 100%;
+    height: 2.25rem;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 800;
+    text-decoration: underline;
+    color: white;
+}
+.bachira-is-an {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.customers {
+    margin: 0;
+}
+
+.bachira-is-an-container {
+    position: relative;
+    font-size: var(--paragraph-header-text-size);
+    letter-spacing: 0.3px;
+    line-height: 1.38rem;
+    color: white;
+}
+
+.bachira-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.88rem;
+    font-size: var(--heading-h3-size);
+}
+
+.about,
+.for-beginner {
+    position: relative;
+    letter-spacing: 0.3px;
+    line-height: 1.38rem;
+}
+
+.about {
+    line-height: 1.25rem;
+}
+
+.frame-child {
+    position: relative;
+    width: 6.25rem;
+    height: 6.25rem;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.about-parent,
+.for-beginner-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.about-parent {
+    gap: var(--gap-sm);
+    font-size: var(--paragraph-body-text-size);
+    color: white;
+}
+
+.for-beginner-parent {
+    gap: var(--gap-md);
+}
+
+.frame-parent {
+    width: 75rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copyright-2023 {
+    position: relative;
+    font-size: var(--paragraph-body-text-size);
+    letter-spacing: 0.3px;
+    line-height: 1.25rem;
+    color: white;
+}
+
+.footer {
+    margin-top: 2rem;
+    border-top: grey 0.5px solid;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3.13rem;
+    text-align: left;
+    font-size: var(--paragraph-header-text-size);
+    color: whitesmoke;
+    font-family: var(--heading-h3);
+    background: rgb(58, 58, 58);
+}

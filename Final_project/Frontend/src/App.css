@@ -1,0 +1,146 @@
+.App {
+  text-align: center;
+}
+
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --heading-h3: Manrope;
+  --components-button-large: Roboto;
+  --font-baloo-bhai: "Baloo Bhai";
+
+  /* font sizes */
+  --font-size-4xs: 0.56rem;
+  --font-size-3xs: 0.61rem;
+  --font-size-2xs: 0.65rem;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.7rem;
+  --font-size-base: 0.84rem;
+  --paragraph-body-text-size: 0.88rem;
+  --font-size-xl: 0.93rem;
+  --components-button-large-size: 0.94rem;
+  --paragraph-header-text-size: 1rem;
+  --font-size-4xl: 1.03rem;
+  --font-size-5xl: 1.12rem;
+  --font-size-6xl: 1.25rem;
+  --font-size-7xl: 1.4rem;
+  --font-size-8xl: 1.38rem;
+  --font-size-9xl: 1.5rem;
+  --font-size-10xl: 1.78rem;
+  --heading-h3-size: 2rem;
+  --font-size-12xl: 2.25rem;
+
+  /* Colors */
+  --studio-darkmode-allwhite-ffffff: #fff;
+  --color-gray-100: #8e8e94;
+  --black: #101913;
+  --color-gray-300: rgba(0, 0, 0, 0.87);
+  --color-dimgray-100: #616161;
+  --grey: #535a56;
+  --green1: #3c9379;
+  --color-orange: #f99a0e;
+  --color-whitesmoke: #eaeaea;
+  --color-darkslategray-100: #424242;
+  --color-darkslategray-200: #303030;
+  --color-cornflowerblue-100: #1262af;
+  --color-cornflowerblue-200: #1262ae;
+  --color-gainsboro-100: #e0e0e0;
+  --color-gainsboro-200: rgba(226, 226, 226, 0.1);
+  --color-lavender: #ccdcec;
+  --color-darkgray: #999;
+  --color-silver: #bdbdbd;
+
+  /* Gaps */
+  --gap-9xs: 0.14rem;
+  --gap-8xs: 0.25rem;
+  --gap-7xs: 0.28rem;
+  --gap-6xs: 0.37rem;
+  --gap-5xs: 0.47rem;
+  --gap-4xs: 0.5rem;
+  --gap-3xs: 0.51rem;
+  --gap-2xs: 0.63rem;
+  --gap-xs: 0.93rem;
+  --gap-sm: 1rem;
+  --gap-md: 1.07rem;
+  --gap-lg: 1.12rem;
+  --gap-xl: 1.25rem;
+  --gap-2xl: 1.4rem;
+  --gap-3xl: 1.5rem;
+  --gap-4xl: 1.63rem;
+  --gap-5xl: 1.68rem;
+  --gap-6xl: 1.88rem;
+  --gap-7xl: 2.5rem;
+  --gap-8xl: 3.75rem;
+
+  /* Paddings */
+  --padding-8xs: 0.19rem;
+  --padding-7xs: 0.14rem;
+  --padding-6xs: 0.23rem;
+  --padding-5xs: 0.28rem;
+  --padding-4xs: 0.37rem;
+  --padding-3xs: 0.56rem;
+  --padding-2xs: 0.61rem;
+  --padding-xs: 0.7rem;
+  --padding-sm: 0.75rem;
+  --padding-md: 0.75rem;
+  --padding-lg: 0.93rem;
+  --padding-xl: 1rem;
+  --padding-2xl: 1.13rem;
+  --padding-3xl: 1.25rem;
+  --padding-4xl: 1.38rem;
+  --padding-5xl: 1.5rem;
+  --padding-6xl: 1.88rem;
+  --padding-7xl: 2.5rem;
+  --padding-8xl: 3.74rem;
+
+  /* border radiuses */
+  --br-2xs: 2.99px;
+  --br-xs: 7.48px;
+  --br-sm: 8px;
+  --br-md: 11.96px;
+  --br-lg: 23.17px;
+  --br-xl: 30px;
+  --br-2xl: 47.84px;
+}

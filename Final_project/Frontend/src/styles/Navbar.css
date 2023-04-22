@@ -1,0 +1,103 @@
+
+.bachira1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    letter-spacing: -1.5px;
+    line-height: 2.25rem;
+}
+
+.logo1 {
+    width: 15rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    height: 2.25rem;
+    font-size: 3rem;
+    font-weight: 100;
+    text-decoration: none;
+    color: rgb(45, 45, 45) ;
+}
+.logospan{
+    color:grey;
+    font-size: 2rem;
+}
+
+
+.products{
+    text-decoration: none;
+}
+
+
+.home,
+.products {
+    position: relative;
+    letter-spacing: 0.3px;
+    line-height: 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+    color: rgb(72, 72, 72);
+    
+}
+
+.navbar-item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-7xl);
+    color: var(--grey);
+}
+.products:hover{
+    
+    border-bottom: 0.2px solid black;
+    
+}
+
+.register {
+    border-radius: var(--br-sm);
+    background-color: black;
+    padding: var(--padding-md) var(--padding-2xl);
+    justify-content: center;
+    color: var(--studio-darkmode-allwhite-ffffff);
+}
+.register .products{
+    color: white;
+}
+.cta-button,
+.navbar,
+.register {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cta-button {
+    justify-content: center;
+    gap: var(--gap-xl);
+}
+
+.navbar {
+
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 80vw;
+    margin-left: 10vw;
+    justify-content: space-between;
+    text-align: left;
+    font-size: var(--paragraph-header-text-size);
+    color: #FF595A;
+    font-family: var(--heading-h3);
+}
+.hero{
+    width: 100vw;
+    position: sticky;
+    top: 0rem;
+    left: 0rem;
+    background-color: white;
+    z-index: 1;
+
+}
+Link{
+    text-decoration: none;
+    color: white;
+}
