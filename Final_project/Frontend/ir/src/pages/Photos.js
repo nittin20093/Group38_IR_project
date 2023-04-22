@@ -10,13 +10,14 @@ import { useEffect } from 'react'
 
 
 
+
 const City = () => {
     const location = useLocation();
     const propsdata = location.state;
     console.log(propsdata)
     const getdata =  async()=>{
         try{
-            const data = await axios.post('/similarity', {
+            const data = await axios.post('http://192.168.53.147:5000/similarity', {
                 ...propsdata
             })
             console.log(data)
