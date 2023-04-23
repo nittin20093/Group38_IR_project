@@ -46,4 +46,4 @@ def ranked():
 
 # main driver function
 if __name__ == '__main__':
-    app.run(host='192.168.53.147' , port=5000)
+    app.run(host='192.168.1.4' , port=5000)

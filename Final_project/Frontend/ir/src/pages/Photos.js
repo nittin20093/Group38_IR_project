@@ -6,7 +6,6 @@ import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect } from 'react'
-
 import Footer from '../components/Footer'
 
 
@@ -138,7 +137,7 @@ const City = () => {
                                 )
                         })}
                     </div>
-                    <Link to="/hotels/hotels" state={{ ...propsdata, ...{photos:selectedPhotos}}}><button class="btn btn-success">SUBMIT</button></Link>
+                    <Link to="/hotels/hotels" state={{ ...propsdata, ...{selectedphotos:selectedPhotos, allphotos:photos}}}><button class="btn btn-success">SUBMIT</button></Link>
 
 
 
