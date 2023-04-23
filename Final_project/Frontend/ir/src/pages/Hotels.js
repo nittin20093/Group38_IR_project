@@ -11,7 +11,7 @@ const City = () => {
     console.log(propsdata)
     const getdata =  async()=>{
         try{
-            const data = await axios.post('http://192.168.53.147:5000/similarity', {
+            const data = await axios.post('http://127.0.0.1:5000/similarity', {
                 ...propsdata
             })
             console.log(data)

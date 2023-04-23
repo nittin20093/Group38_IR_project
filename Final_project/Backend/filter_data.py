@@ -50,10 +50,7 @@ def filter_data(parent_df ,type_of_rank, min_price, max_price ,min_ratings , ame
     return new_idx
 
 def filter_with_similarity(parent_df ,type_of_rank, min_price, max_price ,min_ratings , amenities , selected_photos , all_photos , dataset_name):
-    not_selected = list()
-    for el in all_photos:
-        if el not in selected_photos:
-            not_selected.append(el)
+    
 
 
 
@@ -92,6 +89,11 @@ def filter_with_similarity(parent_df ,type_of_rank, min_price, max_price ,min_ra
         if(intersect == amenities):
             new_idx.append(df.at[idx  , 'Unnamed: 0.2'])
 
+    not_selected = list()
+    for el in new_idx:
+        if el not in selected_photos:
+            not_selected.append(el)
+
     user_not_interested_removed = list()
 
     for eac in new_idx:
@@ -100,7 +102,7 @@ def filter_with_similarity(parent_df ,type_of_rank, min_price, max_price ,min_ra
 
     ress = list()
     for ea in selected_photos:
-        l = 20/len(selected_photos)
+        l = int(20/len(selected_photos))
         res = SimilarImages.find_similar(ea,l , dataset_name)
         for every in res:
             ress.append(every)

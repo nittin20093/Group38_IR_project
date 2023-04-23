@@ -22,7 +22,7 @@ const City = () => {
     console.log(propsdata)
     const getdata =  async()=>{
         try{
-            const datas = await axios.post('http://192.168.53.147:5001/ranked_with_filter', {
+            const datas = await axios.post('http://127.0.0.1:5000/ranked_with_filter', {
                 ...propsdata
             })
             const str_datas = JSON.stringify(datas.data.ranked_filtered_idxs);
