@@ -15,8 +15,10 @@
     width: 70%;
     color: black;
     background: white;
-    height: 100vh;
     padding: 2rem;
+    padding-bottom: 10%;
+    min-height: 50Vh;
+   
 }
 .sidebar1{
     width: 20%;
@@ -29,16 +31,19 @@
 
 }
 .sidebar .sidebaroptions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 80%;
     /* background-color: white; */
     color: black;
-    margin: 0.5rem;
     padding: 1rem;
     font-size: 1.2rem;
+    border-bottom: rgb(207, 207, 207) 1px solid;
    
 }
 .sidebar{
-    margin-top:5rem;
+    margin-top:0 rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,10 +51,22 @@
 }
 .sidebar .active{
     background-color:#2980B9 ;
-    color: white;
-    transform: scale(1.2);
-    margin: 1rem;
+    color: white !important;
+
+
 }
+.sidebar .main{
+    width: 100%;
+    font-size: 1.2rem;
+    margin: 2rem;
+    margin-top:0 ;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border: none !important;
+    background-color:#2980B9;
+    color: #ffffff;
+}
+
 .sidebar2 .title{
     font-size: 2rem;
 }
@@ -82,6 +99,8 @@
 }
 
 .Previnfo{
+    position: relative;
+    left: 0;
     display: flex;
     flex-direction: column;
     font-size: 2rem;
@@ -89,6 +108,7 @@
     margin-bottom: 4rem;
     color: grey;
     text-transform: capitalize;
+    
 }
 
 .selectH1{
@@ -102,3 +122,73 @@
     flex-direction: column;
     font-size: 4rem;
 }
+.basic-multiselect{
+    width: 50%;
+    margin: auto;
+    padding-bottom: 2rem;
+}
+.activephoto{
+    background: #2980B9;
+}
+.cardcity{
+    display: flex;
+    width: 30%;
+    background-color: #e5e5e5;
+    justify-content: center;
+    align-items: center;
+}
+.cardcity img{
+    width: 92%;
+    margin: 1rem;
+}
+.cityselect{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    padding-top: 10%;
+
+}
+.sidebar2title{
+    margin-top: 5%;
+    font-weight: 500;
+}
+.previnfoheading{
+    color:#2980B9;
+    font-weight: 700;
+}
+.previnfovalue{
+    color: grey;
+    font-weight: 300;
+}
+.selectwithbtn{
+    display: flex;
+    width: 40%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.selectamen{
+    width: 80%;
+    margin: auto;
+}
+.btn {
+    appearance: none;
+        -webkit-appearance: none;
+    font-family: sans-serif;
+    cursor: pointer;
+    padding: 12px;
+    min-width: 100px;
+    border: 0px;
+      -webkit-transition: background-color 100ms linear;
+      -ms-transition: background-color 100ms linear;
+       transition: background-color 100ms linear;
+  }
+  .btn-success {
+    background: #2ecc71;
+    color: #ffffff;
+  }
+  
+  .btn-success:hover {
+    background: #27ae60;
+    color: #ffffff;
+  }

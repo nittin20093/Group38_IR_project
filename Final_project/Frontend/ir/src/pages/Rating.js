@@ -5,50 +5,93 @@ import Navbar from '../components/Navbar'
 import '../styles/City.css'
 import { Link, useLocation } from 'react-router-dom'
 import Footer from '../components/Footer'
+import Select from 'react-select'
+
+const options = [
+    { value: '5', label: '5 rating' },
+    { value: '4-5', label: '4 - 5 rating' },
+    { value: '3-4', label: '3 - 4 rating' },
+    { value: '3-3', label: '2 - 3 rating' },
+
+]
+
+const styles = {
+    menuList: (provided, state) => ({
+        ...provided,
+        paddingTop: 0,
+        paddingBottom: 0,
+    })
+};
+
+
+
 const City = () => {
     const location = useLocation();
     const propsdata = location.state;
-    const [Select,setSelect] = useState();
+    const [Selects, setSelects] = useState();
     console.log(propsdata)
-  return (
-    <div className='citypage'>
-        <Navbar></Navbar>
-        <div className='hero'>
-            <div className='sidebar1'>
-                <div className='sidebar'>
-                <div className='sidebaroptions '>
-                    <Link to="/hotels/city">Select The City</Link>
-                </div>
-                <div className='sidebaroptions'>
-                    Budget
-                </div>
-                <div className='sidebaroptions'>
-                    Amenities
-                </div>
-                <div className='sidebaroptions active'>
-                    Minimum Rating
-                </div>
-                <div className='sidebaroptions '>
-                    Select Some Photos
-                </div>
-                <div className='sidebaroptions'>
-                    Select hotels
-                </div>
-                <div className='sidebaroptions'>
-                    Enjoy
-                </div>
-             </div>
+    const handlechange = (selectedoption) => {
 
-            </div>
-            <div className='sidebar2'>
-                <div className='Previnfo'>
-                    <span>{propsdata.city}</span>
-                    <span>Rs {propsdata.budget} per day</span>
-                    <span>{propsdata.amenities}</span>
+        setSelects(selectedoption.value)
+    }
+    return (
+        <div className='citypage'>
+            <Navbar></Navbar>
+            <div className='hero'>
+                <div className='sidebar1'>
+                    <div className='sidebar'>
+                        <div className=' main'>
+                            PROCEDURE
+                        </div>
+                        <div className='sidebaroptions '>
+                            <Link to="/hotels/city" style={{ textDecoration: 'none', color: 'Black' }}>Select The City</Link>
+                        </div>
+                        <div className='sidebaroptions'>
+                            Budget
+                        </div>
+                        <div className='sidebaroptions'>
+                            Amenities
+                        </div>
+                        <div className='sidebaroptions active'>
+                            Minimum Rating
+                        </div>
+                        <div className='sidebaroptions '>
+                            Select Some Photos
+                        </div>
+                        <div className='sidebaroptions'>
+                            Select hotels
+                        </div>
+                        <div className='sidebaroptions'>
+                            Enjoy
+                        </div>
+                    </div>
+
                 </div>
-                <div className='oneline'>
-                    <h1 className='title'>What is the Minimum rating you want ?</h1>
-                    <div className=''>
+                <div className='sidebar2'>
+                    <div className='Previnfo'>
+                        <span className='previnfoheading'>City - <span className='previnfovalue'>{propsdata.city}</span></span>
+                        <span className='previnfoheading'>Budget - <span className='previnfovalue'>{propsdata.budget}</span></span>
+                        <span className='previnfoheading'>Amenities - <span className='previnfovalue'>{propsdata.amenities.map(items => { return (<span>{items}, </span>) })}</span></span>
+
+                        <span></span>
+                    </div>
+                    <div className='oneline'>
+                        <h1 className='sidebar2title'>What is the Minimum rating you want ?</h1>
+                        <div className='selectwithbtn'>
+                            <div className='selectamen'>
+                                <Select
+                                    defaultValue={[]}
+                                    onChange={handlechange}
+                                    name="colors"
+                                    options={options}
+                                    className=""
+                                    classNamePrefix="select"
+                                    styles={styles}
+                                />
+                            </div>
+                            <Link to="/hotels/photos" state={{ ...propsdata, ...{ rating: Selects } }}>submit</Link>
+                        </div>
+                        {/* <div className=''>
                         <select value={Select} onChange={e=>{setSelect(e.target.value)}}>
                             <option value="None">Choose from the list </option>
                             <option value="5"> 5 rating</option>
@@ -57,19 +100,19 @@ const City = () => {
                             <option value="2-3">2-3 rating</option>
                         </select>
 
+                    </div> */}
+
+
                     </div>
-                    <Link to="/hotels/photos" state={{...propsdata, ...{rating:Select}}}>submit</Link>
+
+
 
                 </div>
-                
-                
-
             </div>
+            <Footer></Footer>
+
         </div>
-        <Footer></Footer>
-       
-    </div>
-  )
+    )
 }
 
 export default City

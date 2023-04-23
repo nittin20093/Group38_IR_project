@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect } from 'react'
+import Footer from '../components/Footer'
 
 
 
@@ -14,30 +15,33 @@ const City = () => {
     const location = useLocation();
     const propsdata = location.state;
     console.log(propsdata)
-    const getdata =  async()=>{
-        try{
+    const getdata = async () => {
+        try {
             const data = await axios.post('/similarity', {
                 ...propsdata
             })
             console.log(data)
-        }catch(error){
+        } catch (error) {
             console.log(error)
         }
     }
-    useEffect(()=>{
+    useEffect(() => {
         getdata()
-    },[])
+    }, [])
 
-    
-    
+
+
     return (
         <div className='citypage'>
             <Navbar></Navbar>
             <div className='hero'>
                 <div className='sidebar1'>
                     <div className='sidebar'>
+                        <div className=' main'>
+                            PROCEDURE
+                        </div>
                         <div className='sidebaroptions '>
-                            <Link to="/hotels/city">Select The City</Link>
+                            <Link to="/hotels/city" style={{ textDecoration: 'none', color: 'Black' }}>Select The City</Link>
                         </div>
                         <div className='sidebaroptions '>
                             Budget
@@ -55,7 +59,7 @@ const City = () => {
                             Select hotels
                         </div>
                         <div className='sidebaroptions'>
-                            Enjoy
+                            Enjoy!
                         </div>
                     </div>
 
@@ -70,7 +74,7 @@ const City = () => {
 
                 </div>
             </div>
-
+            <Footer></Footer>
         </div>
     )
 }
