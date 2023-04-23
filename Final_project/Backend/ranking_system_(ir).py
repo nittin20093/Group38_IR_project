@@ -18,7 +18,7 @@ import ast
 nltk.download('vader_lexicon')
 skywalker = SentimentIntensityAnalyzer()
 
-df=pd.read_csv("/content/drive/MyDrive/IR_Project/banglore_hotels_details_final.csv") #this changes for Goa
+df=pd.read_csv("/content/drive/MyDrive/IR_Project/goa_hotels_details_final.csv") #this changes for Goa
 x=df["reviews"].to_dict()
 score=[]
 for i in x:
@@ -45,5 +45,5 @@ Sith.head()
 Sith.shape
 
 from google.colab import files
-Sith.to_csv('TouristRankedHotelsBangalore.csv', sep='\t', index=False,header=True). #Change the name for the final Location
-files.download('TouristRankedHotelsBangalore.csv')
+Sith.to_csv('BasicRankedHotelsGoa.csv', index=True,header=True) #Change the name for the final Location
+files.download('BasicRankedHotelsGoa.csv')
