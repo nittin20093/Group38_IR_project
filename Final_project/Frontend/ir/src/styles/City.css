@@ -250,10 +250,13 @@
     height:150px;
     background-color: #e5e5e5;
     margin:1rem ;
+    object-fit: fill;
 }
 .somephotocard img{
-    width: 200px;
+    width: 80%;
+    height: 80%;
     margin: auto;
+    
 }
 .activesomephoto{
     background-color: #2980B9 !important;

@@ -50,40 +50,14 @@ const City = () => {
             return false
         }
     }
-    const datafetched = {
+    const datafetched ={
         "data": {
-            "similar_images_indexes": [
-                0,
-                157,
-                619,
-                2,4,6,7,9,0,
-                157,
-                619,
-                2,4,6,7,9,0,
-                157,
-                619,
-                2,4,6,7,9,0,
-                157,
-                619,
-                2,4,6,7,9,0,
-                157,
-                619,
-                2,4,6,7,9,0,
-                157,
-                619,
-                2,4,6,7,9,0,
-                157,
-                619,
-                2,4,6,7,9,0,
-                157,
-                619,
-                2,4,6,7,9,0
-            ]
+            "ranked_filtered_idxs": "[561, 196, 390, 425, 44, 534, 474, 420, 85, 155, 313, 394, 517, 139, 144, 266, 149, 377, 468, 289, 314, 95, 288, 429, 355, 38, 98, 202, 242, 450, 305, 304, 22, 80, 328, 122, 223, 366, 107, 379, 382, 496, 150, 408, 218, 225, 239, 346, 414, 400, 167, 127, 62, 421, 51, 283, 180, 73, 50, 343, 290, 213, 118, 181, 113, 263, 161, 153, 301, 197, 235, 64, 92, 622, 273, 19, 83, 135, 42, 418, 11, 216, 16, 9, 252, 211, 40, 349, 131, 30, 158, 519, 260, 641, 286, 36, 78, 255, 321, 35, 12, 120, 257, 178, 27, 163, 147, 431, 17, 352, 93, 103, 94, 236, 356, 70, 445, 143, 222, 448, 563, 164, 451, 170, 87, 595, 582, 175, 327, 176, 89, 597, 182, 475, 316, 90, 599, 59, 332, 546, 101, 340, 241, 422, 391, 386, 344, 84, 278, 151, 237, 554, 339, 303, 401, 280, 556, 55, 219, 478, 351, 159]"
         },
         "status": 200,
         "statusText": "OK",
         "headers": {
-            "content-length": "39",
+            "content-length": "801",
             "content-type": "application/json"
         },
         "config": {
@@ -113,12 +87,13 @@ const City = () => {
                 "Content-Type": "application/json"
             },
             "method": "post",
-            "url": "http://192.168.53.147:5000/similarity",
-            "data": "{\"city\":\"Delhi\",\"budget\":\"2500-5000\",\"amenities\":[\"Mountain view\"],\"rating\":\"4\"}"
+            "url": "http://192.168.53.147:5001/ranked_with_filter",
+            "data": "{\"city\":\"Delhi\",\"budget\":{\"min\":2500,\"max\":5000},\"amenities\":[],\"rating\":\"3\"}"
         },
         "request": {}
     }
-    const photos = datafetched.data.similar_images_indexes
+    const photos = datafetched.data.ranked_filtered_idxs.replace(/[\[\]']+/g,'').split(',').map(Number);
+    console.log(datafetched.data.ranked_filtered_idxs.replace(/[\[\]']+/g,'').split(',').map(Number))
     return (
         <div className='citypage'>
             <Navbar></Navbar>
