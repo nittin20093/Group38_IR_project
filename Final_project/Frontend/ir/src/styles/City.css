@@ -1,36 +1,41 @@
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
 }
-.citypage{
+
+.citypage {
     width: 100%;
     height: fit-content;
     background-color: #F5F5F5;
 }
-.hero{
+
+.hero {
     display: flex;
     justify-content: center;
 
 }
-.sidebar2{
+
+.sidebar2 {
     width: 70%;
     color: black;
     background: white;
     padding: 2rem;
     padding-bottom: 10%;
     min-height: 50Vh;
-   
+
 }
-.sidebar1{
+
+.sidebar1 {
     width: 20%;
     color: black;
     background-color: white;
     margin-left: 2rem;
     margin-right: 2rem;
-    
+
 
 
 }
-.sidebar .sidebaroptions{
+
+.sidebar .sidebaroptions {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,44 +45,49 @@
     padding: 1rem;
     font-size: 1.2rem;
     border-bottom: rgb(207, 207, 207) 1px solid;
-   
+
 }
-.sidebar{
-    margin-top:0 rem;
+
+.sidebar {
+    margin-top: 0 rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-transform: capitalize;
 }
-.sidebar .active{
-    background-color:#2980B9 ;
+
+.sidebar .active {
+    background-color: #2980B9;
     color: white !important;
 
 
 }
-.sidebar .main{
+
+.sidebar .main {
     width: 100%;
     font-size: 1.2rem;
     margin: 2rem;
-    margin-top:0 ;
+    margin-top: 0;
     padding-top: 1rem;
     padding-bottom: 1rem;
     border: none !important;
-    background-color:#2980B9;
+    background-color: #2980B9;
     color: #ffffff;
 }
 
-.sidebar2 .title{
+.sidebar2 .title {
     font-size: 2rem;
 }
-.select{
+
+.select {
     display: flex;
     height: 100%;
     position: relative;
     top: 10%;
     flex-wrap: wrap;
 }
-.card{
+
+.card {
     flex: 1 0 20%;
     display: flex;
     flex-direction: column;
@@ -87,18 +97,20 @@
     margin: 1rem;
     background-color: rgb(212, 212, 212);
 }
-.card img{
+
+.card img {
     width: 250px;
     margin: auto;
 }
-.card span{
+
+.card span {
     font-size: 1.5rem;
     font-weight: 400;
     color: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.Previnfo{
+.Previnfo {
     position: relative;
     left: 0;
     display: flex;
@@ -108,87 +120,125 @@
     margin-bottom: 4rem;
     color: grey;
     text-transform: capitalize;
-    
+
 }
 
-.selectH1{
+.selectH1 {
     font-size: 3rem;
 }
-.enjoy img{
+
+.enjoy img {
     width: 70%;
 }
-.information{
+
+.information {
     display: flex;
     flex-direction: column;
     font-size: 4rem;
 }
-.basic-multiselect{
+
+.basic-multiselect {
     width: 50%;
     margin: auto;
     padding-bottom: 2rem;
 }
-.activephoto{
+
+.activephoto {
     background: #2980B9;
 }
-.cardcity{
+
+.cardcity {
     display: flex;
     width: 30%;
     background-color: #e5e5e5;
     justify-content: center;
     align-items: center;
 }
-.cardcity img{
+
+.cardcity img {
     width: 92%;
     margin: 1rem;
 }
-.cityselect{
+
+.cityselect {
     display: flex;
     justify-content: space-around;
     position: relative;
     padding-top: 10%;
 
 }
-.sidebar2title{
+
+.sidebar2title {
     margin-top: 5%;
     font-weight: 500;
 }
-.previnfoheading{
-    color:#2980B9;
+
+.previnfoheading {
+    color: #2980B9;
     font-weight: 700;
 }
-.previnfovalue{
+
+.previnfovalue {
     color: grey;
     font-weight: 300;
 }
-.selectwithbtn{
+
+.selectwithbtn {
     display: flex;
     width: 40%;
     margin: auto;
     justify-content: space-between;
     align-items: center;
 }
-.selectamen{
+
+.selectamen {
     width: 80%;
     margin: auto;
 }
+
 .btn {
     appearance: none;
-        -webkit-appearance: none;
+    -webkit-appearance: none;
     font-family: sans-serif;
     cursor: pointer;
     padding: 12px;
     min-width: 100px;
     border: 0px;
-      -webkit-transition: background-color 100ms linear;
-      -ms-transition: background-color 100ms linear;
-       transition: background-color 100ms linear;
-  }
-  .btn-success {
+    -webkit-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+
+.btn-success {
     background: #2ecc71;
     color: #ffffff;
-  }
-  
-  .btn-success:hover {
+}
+
+.btn-success:hover {
     background: #27ae60;
     color: #ffffff;
-  }
+}
+
+.listamenities {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.listamenities span {
+    width: fit-content;
+    border: grey 1px solid;
+    list-style-type: none;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+    margin: 1rem;
+    border-radius: 10px;
+    color: rgb(71, 71, 71);
+    margin-right: 0.5rem;
+    box-shadow: 5px 5px 5px rgb(213, 213, 213);
+}
+
+.activeli {
+    background-color: #297fb9d4 !important;
+    color: white !important;
+}
