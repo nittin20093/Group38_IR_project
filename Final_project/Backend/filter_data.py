@@ -43,11 +43,11 @@ def filter_data(parent_df ,type_of_rank, min_price, max_price ,min_ratings , ame
     # temp = temp[1:]
     # print(temp[0])
 
-
-
     # return df
     # print(len(new_idx))
     return new_idx
 
+# def filter_with_similarity(selected , not_selected , ):
 
-print(filter_data('delhi/BasicRankedHotelsDelhi.csv' , 'basic_ranked_datasets' , 1000 , 2000 ,['Soundproofing']))
+
+# print(filter_data('delhi/BasicRankedHotelsDelhi.csv' , 'basic_ranked_datasets' , 1000 , 2000 ,['Soundproofing']))
