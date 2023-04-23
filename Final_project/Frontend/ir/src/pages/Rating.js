@@ -71,8 +71,7 @@ const City = () => {
                 <div className='sidebar2'>
                     <div className='Previnfo'>
                         <span className='previnfoheading'>City - <span className='previnfovalue'>{propsdata.city}</span></span>
-                        <span className='previnfoheading'>Budget - <span className='previnfovalue'>{propsdata.budget}</span></span>
-                        <span className='previnfoheading'>Amenities - <span className='previnfovalue'>{propsdata.amenities.map(items => { return (<span>{items}, </span>) })}</span></span>
+                        <span className='previnfoheading'>Budget - <span className='previnfovalue'>{propsdata.budget.min} - {propsdata.budget.max}  </span></span>                        <span className='previnfoheading'>Amenities - <span className='previnfovalue'>{propsdata.amenities.map(items => { return (<span>{items}, </span>) })}</span></span>
 
                         <span></span>
                     </div>

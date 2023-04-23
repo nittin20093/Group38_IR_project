@@ -85,8 +85,7 @@ const City = (props) => {
                 <div className='sidebar2'>
                     <div className='Previnfo'>
                         <span className='previnfoheading'>City - <span className='previnfovalue'>{propsdata.city}</span></span>
-                        <span className='previnfoheading'>Budget - <span className='previnfovalue'>{propsdata.budget}</span></span>
-                    </div>
+                        <span className='previnfoheading'>Budget - <span className='previnfovalue'>{propsdata.budget.min} - {propsdata.budget.max}  </span></span>                    </div>
                     <div className='oneline'>
                         <h1 className='sidebar2title'>What amenities you want ?</h1>
                         <div className="listamenities">
