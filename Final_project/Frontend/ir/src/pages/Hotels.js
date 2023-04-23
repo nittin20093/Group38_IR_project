@@ -5,16 +5,21 @@ import { Link, useLocation } from 'react-router-dom'
 import axios from 'axios'
 
 const City = () => {
-    
+    const [data_rec , setData_rec] = useState({});
+    const [photos_list , setphotos_list] = useState([1]);
     const location = useLocation();
     const propsdata = location.state;
     console.log(propsdata)
     const getdata =  async()=>{
         try{
-            const data = await axios.post('http://127.0.0.1:5000/similarity', {
+            const datas = await axios.post('http://127.0.0.1:5000/similarity', {
                 ...propsdata
             })
-            console.log(data)
+            const str_datas = JSON.stringify(datas.data.ranked_filtered_idxs);
+            console.log(str_datas)
+            const myString = str_datas.replace(/[\[\]']+/g,'').split(',').map(Number);
+            setphotos_list(myString);
+            // console.log(data)
         } catch (error) {
             console.log(error)
         }
@@ -22,7 +27,7 @@ const City = () => {
     useEffect(() => {
         getdata()
     }, [])
-    const photos = [1, 2, 3, 4, 5, 6, 7]
+
     const [selectedPhotos, setSelectPhotos] = useState([]);
     const handleOnClick = (index) => {
         const conditon = selectedPhotos.indexOf(index)
@@ -42,6 +47,10 @@ const City = () => {
         } else {
             return false
         }
+    }
+    const handleprops = ()=>{
+        propsdata[selectedPhotos] = selectedPhotos
+        return {...propsdata}
     }
     return (
         <div className='citypage'>
@@ -78,7 +87,7 @@ const City = () => {
                 <div className='sidebar2'>
                     <h1 className='sidebar2title'>Select the hotel </h1>
                     <div className='selectsomephotos'>
-                        {photos.map((item, index) => {
+                        {photos_list.map((item, index) => {
                             return (
                                 <div className={handlestyle(index) ? "activesomephoto somephotocard" : " somephotocard "} key={index} onClick={() => handleOnClick(index)}>
                                     <img src={require('../assets/images/'+ propsdata.city+'/'+ item + '.jpg')} alt=""></img>
@@ -89,7 +98,7 @@ const City = () => {
 
 
                     </div>
-                    <Link to="/hotels/hotels" state={{ ...propsdata, ...{selectedphotos:selectedPhotos, allphotos:photos}}}><button class="btn btn-success">SUBMIT</button></Link>
+                    <Link to="/hotels/hotels" state={handleprops()}><button class="btn btn-success">SUBMIT</button></Link>
                     
 
 
