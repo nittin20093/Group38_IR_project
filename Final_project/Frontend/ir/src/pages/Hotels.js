@@ -77,18 +77,20 @@ const City = () => {
                 </div>
                 <div className='sidebar2'>
                     <h1 className='sidebar2title'>Select the hotel </h1>
-                    <div className='select'>
+                    <div className='selectsomephotos'>
                         {photos.map((item, index) => {
                             return (
                                 <div className={handlestyle(index) ? "activesomephoto somephotocard" : " somephotocard "} key={index} onClick={() => handleOnClick(index)}>
                                     <img src={require('../assets/images/'+ propsdata.city+'/'+ item + '.jpg')} alt=""></img>
-                                    <span>SGB Hotel, 3 star, Delhi </span>
+                                   
                                 </div>
                             )
                         })}
 
 
                     </div>
+                    <Link to="/hotels/hotels" state={{ ...propsdata, ...{selectedphotos:selectedPhotos, allphotos:photos}}}><button class="btn btn-success">SUBMIT</button></Link>
+
 
 
                 </div>
