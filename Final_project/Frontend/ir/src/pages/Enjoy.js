@@ -1,10 +1,35 @@
-import React from 'react'
 
+import Footer from '../components/Footer'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import '../styles/City.css'
-import { Link } from 'react-router-dom'
-import Footer from '../components/Footer'
+import { Link, useLocation } from 'react-router-dom'
+import axios from 'axios'
+
 const City = () => {
+    const [data_rec , setData_rec] = useState({});
+    const [photos_list , setphotos_list] = useState([1]);
+    const location = useLocation();
+    const propsdata = location.state;
+    console.log(propsdata)
+    const getdata =  async()=>{
+        try{
+            const datas = await axios.post('http://127.0.0.1:5000/get_hotel_links', {
+                ...propsdata
+            })
+            const str_datas = JSON.stringify(datas.data.similar_images_indexes);
+            console.log(str_datas)
+            const myString = str_datas.replace(/[\[\]']+/g,'').split(',');
+            console.log(myString)
+            setphotos_list(myString);
+            // console.log(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    useEffect(() => {
+        getdata()
+    }, [])
   return (
     <div className='citypage'>
         <Navbar></Navbar>
@@ -40,19 +65,24 @@ const City = () => {
             <div className='sidebar2'>
                 <h1 className='title'>Enjoy </h1>
                 <div className='enjoy'>
-                    <img src="https://images.unsplash.com/photo-1625255052242-7b27595fc76f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGhvdGVscyUyMHJvb218ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt=""/>
-                    <div className='enjoyinformation'>
-                        <span className='main'>
-                            <span className='enjoyinfohead'>Hotel Name:</span> SBG Hotel NEW DELHI 
-                        </span>
-                        <span>
-                            <span className='enjoyinfohead'>Cost:</span> 2000 per day 
-                        </span>
-                        <span>
-                            <span className='enjoyinfohead'>Amenities:</span> Basic + Breakfast
-
-                        </span>
-                    </div>
+                    {propsdata.indexes.map((items, index) =>{
+                        return (
+                            <>
+                            <div>
+                                <div onClick={()=>{window.location(photos_list[index])}}>
+                                    <div className={" somephotocard "} key={index} >
+                                        <img src={require('../assets/images/'+ propsdata.city+'/'+ items + '.jpg')} alt=""></img>
+                                    
+                                </div><a href={photos_list[index]}>{photos_list[index]}</a></div>
+                                
+                               {items}
+                            </div>
+                           
+                            </>
+                        )
+                    })}
+                    
+                    
                 </div>
                 
 

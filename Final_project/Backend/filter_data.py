@@ -125,7 +125,7 @@ def get_hotel_data(file_name , indexes):
     for elem in indexes:
         result.append(df.at[elem , 'link'])
 
-    return elem
+    return result
 
 
 

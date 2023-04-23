@@ -13,8 +13,8 @@ const Navbar = props => {
                 <Link to="/" style={{ textDecoration: 'none', color:'Black'  }}><span className='Logo'>TRAVEL.<spam className="io">io</spam></span></Link>
             </div>
             <div className="navbar-item">
-                <Link to="/"className="home">Home</Link>
-                <Link className="products" to='/product'>Products</Link>
+                <Link to="/hotels/city" className="home">Product</Link>
+                {/* <Link className="products" to='/product'>Products</Link> */}
                 <div className="products">Categories</div>
                 <div className="products">Brands</div>
                 <div className="products">Pricing</div> 

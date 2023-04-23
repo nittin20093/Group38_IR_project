@@ -24,8 +24,7 @@ const City = () => {
             console.log(error)
         }
     }
-   
-
+    
     const [selectedPhotos, setSelectPhotos] = useState([]);
     const handleOnClick = (index) => {
         const conditon = selectedPhotos.indexOf(index)
@@ -45,10 +44,6 @@ const City = () => {
         } else {
             return false
         }
-    }
-    const handleprops = ()=>{
-        propsdata.selectedPhotos = selectedPhotos
-        return {...propsdata}
     }
     useEffect(() => {
         getdata()
@@ -103,7 +98,7 @@ const City = () => {
 
 
                     </div>
-                    <Link to="/hotels/hotels1" state={{...propsdata, ...{selectedPhotos:selectedPhotos,selectedphotos:propsdata.selectedphotos.concat(selectedPhotos)}}}><button class="btn btn-success">SUBMIT</button></Link>
+                    {/* <Link to="/hotels/hotels3" state={{...propsdata, ...{selectedPhotos:selectedPhotos}}}><button class="btn btn-success">SUBMIT</button></Link> */}
                     
 
                 </div>
