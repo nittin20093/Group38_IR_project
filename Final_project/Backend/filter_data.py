@@ -54,7 +54,7 @@ def filter_data(notpresentidx, parent_df ,type_of_rank, min_price, max_price ,mi
     # print(len(new_idx))
     return final_idx
 
-def filter_with_similarity(notpresentidx , parent_df ,type_of_rank, min_price, max_price ,min_ratings , amenities , selected_photos , all_photos , dataset_name):
+def filter_with_similarity(notpresentidx , parent_df ,type_of_rank, min_price, max_price ,min_ratings , amenities , all_selected_photos , selected_photos , all_photos , dataset_name):
     
 
 
@@ -101,13 +101,13 @@ def filter_with_similarity(notpresentidx , parent_df ,type_of_rank, min_price, m
 
     not_selected = list()
     for el in final_idx:
-        if el not in selected_photos:
+        if el not in all_selected_photos:
             not_selected.append(el)
 
     user_not_interested_removed = list()
 
     for eac in final_idx:
-        if eac not in not_selected or eac in selected_photos:
+        if eac not in not_selected or eac in all_selected_photos:
             user_not_interested_removed.append(eac)
 
     ress = list()

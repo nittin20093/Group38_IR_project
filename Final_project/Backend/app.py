@@ -32,7 +32,7 @@ def similarity():
         print(u)
         if(u['city']=='Delhi'):
             notpresentidx = [148,173,201,208,228,232,261,274,300,348,354,361,368,385,396,402,409,415,427,433,436,439,442,446,467,476,481,484,491,501,503,504,507,509,512,516,523,524,530,535,550,551,560,565,566,570,573,574,575,576,577,578,586,587,588,589,590,591,605,606,608,609,612,613,615,625,629,630,632,637]
-            similar_images_index_list = filter_data.filter_with_similarity(notpresentidx, 'delhi/BasicRankedHotelsDelhi.csv' , 'basic_ranked_datasets' , u['budget']['min'] , u['budget']['max'],  u['rating'] ,u['amenities'], u['selectedphotos'],u['allphotos'],'delhi_dataset')
+            similar_images_index_list = filter_data.filter_with_similarity(notpresentidx, 'delhi/BasicRankedHotelsDelhi.csv' , 'basic_ranked_datasets' , u['budget']['min'] , u['budget']['max'],  u['rating'] ,u['amenities'],u['selectedPhotos'], u['selectedphotos'],u['allphotos'],'delhi_dataset')
         if(u['city']=='Goa'):
             notpresentidx = [2,24,166,179,188,196,227,286,291,341,370,373,420,430,448,472,474,516]
             similar_images_index_list = filter_data.filter_with_similarity(notpresentidx,'goa/BasicRankedHotelsGoa.csv' , 'basic_ranked_datasets' , u['budget']['min'] , u['budget']['max'],  u['rating'] ,u['amenities'], u['selectedphotos'],u['allphotos'],'goa_dataset')

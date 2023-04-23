@@ -102,7 +102,7 @@ const City = () => {
 
 
                     </div>
-                    <Link to="/hotels/hotels" state={() => handleprops()}><button class="btn btn-success">SUBMIT</button></Link>
+                    <Link to="/hotels/hotels" state={{...propsdata, ...{selectedPhotos:selectedPhotos}}}><button class="btn btn-success">SUBMIT</button></Link>
                     
 
                 </div>
