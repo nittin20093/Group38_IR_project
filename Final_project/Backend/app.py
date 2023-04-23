@@ -13,11 +13,11 @@ def ranked_with_filter():
         u = request.get_json()
         print(u)
         if(u['city']=='Delhi'):
-            ranked_filtered_idxs = filter_data.filter_data('delhi/BasicRankedHotelsDelhi.csv' , 'basic_ranked_datasets' ,  u['rating'] )
+            ranked_filtered_idxs = filter_data.filter_data('delhi/BasicRankedHotelsDelhi.csv' , 'basic_ranked_datasets' , u['budget']['min'] , u['budget']['max'],  u['rating'] ,u['amenities'] )
         if(u['city']=='Goa'):
-            ranked_filtered_idxs = filter_data.filter_data('goa/BasicRankedHotelsGoa.csv' , 'basic_ranked_datasets' ,  u['rating'] )
+            ranked_filtered_idxs = filter_data.filter_data('goa/BasicRankedHotelsGoa.csv' , 'basic_ranked_datasets' , u['budget']['min'] , u['budget']['max'],  u['rating'] ,u['amenities']  )
         if(u['city']=='Bangalore'):
-            ranked_filtered_idxs = filter_data.filter_data('banglore/BasicRankedHotelsBangalore.csv' , 'basic_ranked_datasets' ,  u['rating'] )
+            ranked_filtered_idxs = filter_data.filter_data('banglore/BasicRankedHotelsBangalore.csv' , 'basic_ranked_datasets' ,  u['budget']['min'] , u['budget']['max'],  u['rating'] ,u['amenities']  )
         print(ranked_filtered_idxs)
         return {'ranked_filtered_idxs': ranked_filtered_idxs}
 
@@ -28,7 +28,7 @@ def similarity():
         u = request.get_json()
         print(u)
         if(u['city']=='Delhi'):
-            similar_images_index_list = SimilarImages.find_similar(0,3,'delhi_dataset')
+            similar_images_index_list = SimilarImages.find_similar('delhi/BasicRankedHotelsDelhi.csv' , 'basic_ranked_datasets' , u['budget']['min'] , u['budget']['max'],  u['rating'] ,u['amenities'] u['selected'],u['all_photos'],'delhi_dataset')
         print(similar_images_index_list)
         return {'similar_images_indexes': similar_images_index_list}
 
