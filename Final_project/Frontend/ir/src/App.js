@@ -11,7 +11,7 @@ import Rating from './pages/Rating'
 import Photos from './pages/Photos'
 import Hotels from './pages/Hotels'
 import Enjoy from './pages/Enjoy'
-
+import Hotels1 from './pages/Hotels'
 
 
 const App = props => {
@@ -26,6 +26,7 @@ const App = props => {
         <Route path="/hotels/rating" element={<Rating />} />-
         <Route path="/hotels/photos" element={<Photos />} />
         <Route path="/hotels/hotels" element={<Hotels />} />
+        <Route path="/hotels/hotels1" element={<Hotels1 />} />
         <Route path="/hotels/enjoy" element={<Enjoy />} />
       </Routes>
     </div>
