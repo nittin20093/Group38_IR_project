@@ -117,14 +117,14 @@ url="https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads
 
 
 
-Filepath="./home/goa_hotels_details_final.csv"
+Filepath="./home/banglore_hotels_details_final_freq.csv"
 imagelinks=getallImagelink(Filepath)
 
 
 ImageVectors=DownloadImagesVectors(imagelinks)
 # print(ImageVectors)
 
-dbfile = open('./home/goa_dataset', 'ab')
+dbfile = open('./home/banglore_dataset', 'ab')
       
 pickle.dump(ImageVectors, dbfile)                     
 dbfile.close()

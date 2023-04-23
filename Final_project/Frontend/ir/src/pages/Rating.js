@@ -8,10 +8,11 @@ import Footer from '../components/Footer'
 import Select from 'react-select'
 
 const options = [
-    { value: '5', label: '5 rating' },
-    { value: '4-5', label: '4 - 5 rating' },
-    { value: '3-4', label: '3 - 4 rating' },
-    { value: '3-3', label: '2 - 3 rating' },
+    { value: '5', label: 'Min. 5 rating' },
+    { value: '4', label: 'Min. 4 rating' },
+    { value: '3', label: 'Min. 3 rating' },
+    { value: '2', label: 'Min. 2 rating' },
+    { value: '1', label: 'Min. 1 rating' },
 
 ]
 
@@ -76,7 +77,7 @@ const City = () => {
                         <span></span>
                     </div>
                     <div className='oneline'>
-                        <h1 className='sidebar2title'>What is the Minimum rating you want ?</h1>
+                        <h1 className='sidebar2title'>What is the Minimum rating of the hotel you want ?</h1>
                         <div className='selectwithbtn'>
                             <div className='selectamen'>
                                 <Select
