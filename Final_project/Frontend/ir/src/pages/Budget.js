@@ -6,11 +6,11 @@ import { Link, useLocation } from 'react-router-dom'
 import Footer from '../components/Footer'
 import Select from 'react-select'
 const options = [
-    { value: 'under1000 ', label: 'under Rs 1000 per day' },
-    { value: '1000-2500', label: 'Rs 1000 - Rs 2500 per day' },
-    { value: '2500-5000', label: 'Rs 2500 - Rs 5000 per day' },
-    { value: '5000-10000', label: 'Rs 5000 - Rs 10000 per day' },
-    { value: 'above1000', label: 'Rs 10000- above per day ' },
+    { value: {min:0, max:1000}, label: 'under Rs 1000 per day' },
+    { value: {min:1000, max:2500}, label: 'Rs 1000 - Rs 2500 per day' },
+    { value: {min:2500, max:5000}, label: 'Rs 2500 - Rs 5000 per day' },
+    { value: {min:5000, max:10000}, label: 'Rs 5000 - Rs 10000 per day' },
+    { value: {min:10000, max:100000}, label: 'Rs 10000 - above per day ' },
 ]
 const styles = {
     menuList: (provided, state) => ({

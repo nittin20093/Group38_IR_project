@@ -1,10 +1,27 @@
-import React, { useState } from 'react'
-
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import '../styles/City.css'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import axios from 'axios'
 
 const City = () => {
+    
+    const location = useLocation();
+    const propsdata = location.state;
+    console.log(propsdata)
+    const getdata =  async()=>{
+        try{
+            const data = await axios.post('http://192.168.53.147:5000/similarity', {
+                ...propsdata
+            })
+            console.log(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    useEffect(() => {
+        getdata()
+    }, [])
     const photos = [1, 2, 3, 4, 5, 6, 7]
     const [selectedPhotos, setSelectPhotos] = useState([]);
     const handleOnClick = (index) => {
@@ -59,12 +76,12 @@ const City = () => {
                     </div>
                 </div>
                 <div className='sidebar2'>
-                    <h1 className='title'>Select the hotel </h1>
+                    <h1 className='sidebar2title'>Select the hotel </h1>
                     <div className='select'>
                         {photos.map((item, index) => {
                             return (
-                                <div className={handlestyle(index) ? "activephoto card" : " card "} key={index} onClick={() => handleOnClick(index)}>
-                                    <img src={require('../assets/images/' + item + '.png')} alt="" />
+                                <div className={handlestyle(index) ? "activesomephoto somephotocard" : " somephotocard "} key={index} onClick={() => handleOnClick(index)}>
+                                    <img src={require('../assets/images/'+ propsdata.city+'/'+ item + '.jpg')} alt=""></img>
                                     <span>SGB Hotel, 3 star, Delhi </span>
                                 </div>
                             )
