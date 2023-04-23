@@ -33,14 +33,20 @@ def similarity():
         return {'similar_images_indexes': str(similar_images_index_list)}
 
 
-@app.route('/top_100', methods = ['POST'])
+@app.route('/get_hotel_links', methods = ['POST'])
 def ranked():
     if request.method == 'POST':
         u = request.get_json()
         print(u)
-        similar_images_index_list = SimilarImages.find_similar(0,3,'goa_dataset')
-        print(similar_images_index_list)
-        return {'similar_images_indexes': similar_images_index_list}
+        # similar_images_index_list = SimilarImages.find_similar(0,3,'goa_dataset')
+        if(u['city']=='Delhi'):
+            links = filter_data.get_hotel_data('delhi_hotels_details_final_freq.csv' , u['indexes'])
+        if(u['city']=='Goa'):
+            links = filter_data.get_hotel_data('goa_hotels_details_final_freq.csv' ,u['indexes'])
+        if(u['city']=='Bangalore'):
+            links = filter_data.get_hotel_data('banglore_hotels_details_final_freq.csv' , u['indexes'])
+        print(links)
+        return {'similar_images_indexes': links}
     
 
 

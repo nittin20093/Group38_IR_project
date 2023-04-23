@@ -109,6 +109,18 @@ def filter_with_similarity(parent_df ,type_of_rank, min_price, max_price ,min_ra
 
     return ress
 
+def get_hotel_data(file_name , indexes):
+    df = pd.read_csv('./home/' + file_name)
+    result = list()
+    for elem in indexes:
+        result.append(df.at[elem , 'link'])
+
+    return elem
+
+
+
+
+
     
 
     
