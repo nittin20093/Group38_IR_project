@@ -3,6 +3,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import '../styles/City.css'
 import { Link } from 'react-router-dom'
+import Footer from '../components/Footer'
 const City = () => {
   return (
     <div className='citypage'>
@@ -10,6 +11,9 @@ const City = () => {
         <div className='hero'>
             <div className='sidebar1'>
             <div className='sidebar'>
+                <div className=' main'>
+                            PROCEDURE
+                        </div>
                 <div className='sidebaroptions '>
                     <Link to="/hotels/city">Select The City</Link>
                 </div>
@@ -37,12 +41,15 @@ const City = () => {
                 <h1 className='title'>Enjoy </h1>
                 <div className='enjoy'>
                     <img src="https://images.unsplash.com/photo-1625255052242-7b27595fc76f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGhvdGVscyUyMHJvb218ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt=""/>
-                    <div className='information'>
-                        <span>
-                            Cost : 2000 per day 
+                    <div className='enjoyinformation'>
+                        <span className='main'>
+                            <span className='enjoyinfohead'>Hotel Name:</span> SBG Hotel NEW DELHI 
                         </span>
                         <span>
-                            Amenities : Basic + Breakfast
+                            <span className='enjoyinfohead'>Cost:</span> 2000 per day 
+                        </span>
+                        <span>
+                            <span className='enjoyinfohead'>Amenities:</span> Basic + Breakfast
 
                         </span>
                     </div>
@@ -51,7 +58,7 @@ const City = () => {
 
             </div>
         </div>
-       
+       <Footer></Footer>
     </div>
   )
 }
