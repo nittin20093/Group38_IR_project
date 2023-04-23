@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect } from 'react'
+
 import Footer from '../components/Footer'
 
 
@@ -15,9 +16,9 @@ const City = () => {
     const location = useLocation();
     const propsdata = location.state;
     console.log(propsdata)
-    const getdata = async () => {
-        try {
-            const data = await axios.post('/similarity', {
+    const getdata =  async()=>{
+        try{
+            const data = await axios.post('http://192.168.53.147:5000/similarity', {
                 ...propsdata
             })
             console.log(data)
