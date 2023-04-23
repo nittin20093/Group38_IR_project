@@ -15,7 +15,7 @@ const City = () => {
             const datas = await axios.post('http://127.0.0.1:5000/similarity', {
                 ...propsdata
             })
-            const str_datas = JSON.stringify(datas.data.ranked_filtered_idxs);
+            const str_datas = JSON.stringify(datas.data.similar_images_indexes);
             console.log(str_datas)
             const myString = str_datas.replace(/[\[\]']+/g,'').split(',').map(Number);
             setphotos_list(myString);
@@ -49,7 +49,7 @@ const City = () => {
         }
     }
     const handleprops = ()=>{
-        propsdata[selectedPhotos] = selectedPhotos
+        propsdata.selectedPhotos = selectedPhotos
         return {...propsdata}
     }
     return (
@@ -88,6 +88,10 @@ const City = () => {
                     <h1 className='sidebar2title'>Select the hotel </h1>
                     <div className='selectsomephotos'>
                         {photos_list.map((item, index) => {
+                            if(isNaN(item)){
+                                return (<></>)
+                            }
+                            else
                             return (
                                 <div className={handlestyle(index) ? "activesomephoto somephotocard" : " somephotocard "} key={index} onClick={() => handleOnClick(index)}>
                                     <img src={require('../assets/images/'+ propsdata.city+'/'+ item + '.jpg')} alt=""></img>
@@ -98,9 +102,8 @@ const City = () => {
 
 
                     </div>
-                    <Link to="/hotels/hotels" state={handleprops()}><button class="btn btn-success">SUBMIT</button></Link>
+                    <Link to="/hotels/hotels" state={() => handleprops()}><button class="btn btn-success">SUBMIT</button></Link>
                     
-
 
                 </div>
             </div>

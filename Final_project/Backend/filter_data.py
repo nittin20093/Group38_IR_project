@@ -5,7 +5,7 @@ import SimilarImages
 
 # delhi/BasicRankedHotelsDelhi.csv
 # basic_ranked_datasets
-def filter_data(parent_df ,type_of_rank, min_price, max_price ,min_ratings , amenities):
+def filter_data(notpresentidx, parent_df ,type_of_rank, min_price, max_price ,min_ratings , amenities):
     df = pd.read_csv('./home/' + type_of_rank +'/' + parent_df)
 
     for i in range(len(df)):
@@ -40,6 +40,11 @@ def filter_data(parent_df ,type_of_rank, min_price, max_price ,min_ratings , ame
         if(intersect == amenities):
             new_idx.append(df.at[idx  , 'Unnamed: 0.2'])
 
+    final_idx = list()
+    for everyy in new_idx:
+        if everyy not in notpresentidx:
+            final_idx.append(everyy)
+
     
     # res = stringA.strip('][').split(', ')
     # temp = temp[1:]
@@ -47,9 +52,9 @@ def filter_data(parent_df ,type_of_rank, min_price, max_price ,min_ratings , ame
 
     # return df
     # print(len(new_idx))
-    return new_idx
+    return final_idx
 
-def filter_with_similarity(parent_df ,type_of_rank, min_price, max_price ,min_ratings , amenities , selected_photos , all_photos , dataset_name):
+def filter_with_similarity(notpresentidx , parent_df ,type_of_rank, min_price, max_price ,min_ratings , amenities , selected_photos , all_photos , dataset_name):
     
 
 
@@ -89,14 +94,19 @@ def filter_with_similarity(parent_df ,type_of_rank, min_price, max_price ,min_ra
         if(intersect == amenities):
             new_idx.append(df.at[idx  , 'Unnamed: 0.2'])
 
+    final_idx = list()
+    for everyy in new_idx:
+        if everyy not in notpresentidx:
+            final_idx.append(everyy)
+
     not_selected = list()
-    for el in new_idx:
+    for el in final_idx:
         if el not in selected_photos:
             not_selected.append(el)
 
     user_not_interested_removed = list()
 
-    for eac in new_idx:
+    for eac in final_idx:
         if eac not in not_selected or eac in selected_photos:
             user_not_interested_removed.append(eac)
 
