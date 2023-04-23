@@ -242,3 +242,26 @@
     background-color: #297fb9d4 !important;
     color: white !important;
 }
+.somephotocard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height:150px;
+    background-color: #e5e5e5;
+    margin:1rem ;
+}
+.somephotocard img{
+    width: 200px;
+    margin: auto;
+}
+.activesomephoto{
+    background-color: #2980B9 !important;
+    z-index: 1;
+
+}
+.selectsomephotos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

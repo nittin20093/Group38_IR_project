@@ -3,16 +3,8 @@ import Navbar from '../components/Navbar'
 import '../styles/City.css'
 import { Link, useLocation } from 'react-router-dom'
 import Footer from '../components/Footer'
-import Select from 'react-select'
 
 
-const styles = {
-    menuList: (provided, state) => ({
-        ...provided,
-        paddingTop: 0,
-        paddingBottom: 0,
-    })
-};
 
 const City = (props) => {
     const location = useLocation();
@@ -57,27 +49,6 @@ const City = (props) => {
         }
 
     },[])
-    // if (propsdata.city == "goa"){
-    //     goa.map(item =>{
-    //         optiondata.append({value:item})
-    //     }) 
-    // }
-    // if (propsdata.city == "bangalore"){
-    //     bangalore.map(item =>{
-    //         optiondata.append({value:item})
-    //     }) 
-    // }
-
-
-    
-    // [
-    //     { value: 'pickup', label: 'pickup' },
-    //     { value: 'drop', label: 'drop' },
-    //     { value: 'breakfast', label: 'breakfast' },
-    //     { value: 'lunch', label: 'lunch' },
-    //     { value: 'smoking room', label: 'smoking room' },
-    // ]
-
     return (
         <div className='citypage'>
             <Navbar></Navbar>
